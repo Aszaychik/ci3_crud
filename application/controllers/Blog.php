@@ -6,17 +6,17 @@ class Blog extends CI_Controller{
 
     $this->load->database();
     $this->load->helper('url');
+    $this->load->model("BlogModel");
   }
   public function index(){
-    $query = $this->db->get("blog");
+    $query = $this->BlogModel->getBlog();
     $data['blogs'] = $query->result_array();
 
     $this->load->view('blog', $data);
   }
 
   public function detail($url){
-    $this->db->where("url", $url);
-    $query = $this->db->get("blog");
+    $query = $this->BlogModel->getDetail($url);
     $data['blog'] = $query->row_array();
 
     $this->load->view('detail', $data);
