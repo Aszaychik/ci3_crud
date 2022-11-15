@@ -17,6 +17,7 @@
           <a href="<?= site_url("blog/detail/{$blog['url']}")?>"><?= $blog['title'];?></a>
         </h2>
         <a href="<?php echo site_url('blog/updateArticle/'.$blog['id']);?>"> Edit</a>
+        <a href="<?php echo site_url('blog/deleteArticle/'.$blog['id']);?>"> Delete</a>
         <p><?= $blog['content'];?></p>
       </article>
     <?php } ?>
