@@ -9,6 +9,7 @@
 <body>
   <main>
     <h1>Newest Article</h1>
+    <a href="<?php echo site_url('blog/createArticle');?>"> + Create Article</a>
     <?php
     foreach ($blogs as $key => $blog){?>
       <article class="blog">

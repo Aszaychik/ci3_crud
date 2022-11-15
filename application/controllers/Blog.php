@@ -21,5 +21,21 @@ class Blog extends CI_Controller{
 
     $this->load->view('detail', $data);
   }
+
+  public function createArticle()
+  {
+    if($this->input->post()){
+      $data['title'] = $this->input->post('title');
+      $data['content'] = $this->input->post('content');
+
+      $id = $this->BlogModel->insertBlog($data);
+      if($id){
+        echo "Data saved";
+      }else{
+          echo "Save failed";
+        }
+    }
+    $this->load->view('formCreate');
+  }
 } 
 ?>
