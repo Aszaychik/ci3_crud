@@ -7,7 +7,15 @@
   <title>Aszaychik Blog</title>
 </head>
 <body>
-  <h1>Welcome <?= $name;?></h1>
-  <p>Your age is <?= $age;?></p>
+  <main>
+    <h1>Newest Article</h1>
+    <?php
+    foreach ($blogs as $key => $blog){?>
+      <article class="blog">
+        <h2><?= $blog['title'];?></h2>
+        <p><?= $blog['content'];?></p>
+      </article>
+    <?php } ?>
+  </main>
 </body>
 </html>
